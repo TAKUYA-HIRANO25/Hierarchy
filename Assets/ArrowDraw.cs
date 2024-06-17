@@ -16,7 +16,9 @@ public class ArrowDraw : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        arrowImage.enabled = false;
+
+        if (Input.GetMouseButtonDown(0))
         {
             clickPosition = Input.mousePosition;
         }
@@ -28,6 +30,7 @@ public class ArrowDraw : MonoBehaviour
             arrowImage.rectTransform.position = clickPosition;
             arrowImage.rectTransform.rotation = Quaternion.Euler(0, 0, angleRad * Mathf.Rad2Deg);
             arrowImage.rectTransform.sizeDelta = new Vector2(size, size);
+            arrowImage.enabled = true;
             Debug.Log(dist);
         }
 
